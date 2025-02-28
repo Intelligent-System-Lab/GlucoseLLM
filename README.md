@@ -71,7 +71,33 @@ The dataset used in this project is located in the `./dataset/glucose/` director
 To train the **TimeLLM** model using multiple GPUs with mixed precision (`bf16`), run the following command:  
 
 ```bash
-accelerate launch --multi_gpu --mixed_precision bf16 --num_processes 4 --main_process_port 1188 --config_file ./accelerate_config_4gpus.yaml run_glucose.py   --task_name short_term_forecast   --is_training 1   --root_path ./dataset/glucose/   --data_path 544_bbm_train.csv   --test_data_path 544_bbm_test.csv   --model_id 544_BBM_BS2   --model TimeLLM   --data Glucose   --features S   --separate_test no   --seq_len 432   --label_len 12   --pred_len 6   --e_layers 2   --d_layers 1   --factor 3   --enc_in 1   --dec_in 7   --c_out 1   --d_model 8   --d_ff 32   --batch_size 2   --learning_rate 0.01   --llm_layers 16   --train_epochs 30   --model_comment "TimeLLM-Glucose"
+accelerate launch  --multi_gpu --mixed_precision bf16 --num_processes $num_process --main_process_port $master_port --config_file ./accelerate_config_4gpus.yaml run_glucose.py \
+  --task_name short_term_forecast \
+  --is_training 1 \
+  --root_path ./dataset/glucose/ \
+  --data_path 544_bbm_train.csv \
+  --test_data_path 544_bbm_test.csv \
+  --model_id 544_BBM_BS2 \
+  --model $model_name \
+  --data Glucose \
+  --features S \
+  --separate_test no \
+  --seq_len 432 \
+  --label_len 12 \
+  --pred_len 6 \
+  --e_layers 2 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 1 \
+  --dec_in 7 \
+  --c_out 1 \
+  --d_model $d_model \
+  --d_ff $d_ff \
+  --batch_size $batch_size \
+  --learning_rate $learning_rate \
+  --llm_layers $llama_layers \
+  --train_epochs $train_epochs \
+  --model_comment $comment
 ```
 
 ## Testing Command
