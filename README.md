@@ -119,7 +119,7 @@ bash {filename}.sh
 For example:
 
 ```bash
-bash timellm_glucose2020_bbm_test_v2.sh
+bash timellm_glucose2020_bbm_30mins_v2.sh
 ```
 
 ## Notes
