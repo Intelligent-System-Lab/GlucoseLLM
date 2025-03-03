@@ -43,12 +43,7 @@ Before you begin, ensure you have the following installed:
 
 ## Dataset
 
-The dataset used in this project is located in the `./dataset/glucose/` directory. Ensure you have the following files:
-
-- `544_bbm_train.csv`
-- `544_bbm_test.csv`
-- `540_bbm_train.csv`
-- `540_bbm_test.csv`
+The dataset used in this project is OhioT1DM Dataset. Please upload the OhioT1DM Dataset in the `./dataset` directory.
 
 ## Configuration
 
