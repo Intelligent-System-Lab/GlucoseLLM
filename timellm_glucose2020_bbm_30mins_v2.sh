@@ -11,33 +11,33 @@ d_ff=32
 
 comment='TimeLLM-Glucose'
 
-# accelerate launch  --multi_gpu --mixed_precision bf16 --num_processes $num_process --main_process_port $master_port --config_file ./accelerate_config_4gpus.yaml run_glucose.py \
-#   --task_name short_term_forecast \
-#   --is_training 1 \
-#   --root_path ./dataset/glucose/ \
-#   --data_path 540_bbm_train_v2.csv \
-#   --test_data_path 540_bbm_test_v2.csv \
-#   --model_id 540_BBM_BS2 \
-#   --model $model_name \
-#   --data Glucose \
-#   --features S \
-#   --separate_test no \
-#   --seq_len 432 \
-#   --label_len 12 \
-#   --pred_len 6 \
-#   --e_layers 2 \
-#   --d_layers 1 \
-#   --factor 3 \
-#   --enc_in 1 \
-#   --dec_in 7 \
-#   --c_out 1 \
-#   --d_model $d_model \
-#   --d_ff $d_ff \
-#   --batch_size $batch_size \
-#   --learning_rate $learning_rate \
-#   --llm_layers $llama_layers \
-#   --train_epochs $train_epochs \
-#   --model_comment $comment
+ accelerate launch  --multi_gpu --mixed_precision bf16 --num_processes $num_process --main_process_port $master_port --config_file ./accelerate_config_4gpus.yaml run_glucose.py \
+   --task_name short_term_forecast \
+   --is_training 1 \
+   --root_path ./dataset/glucose/ \
+   --data_path 540_bbm_train_v2.csv \
+   --test_data_path 540_bbm_test_v2.csv \
+   --model_id 540_BBM_BS2 \
+   --model $model_name \
+   --data Glucose \
+   --features S \
+   --separate_test no \
+   --seq_len 432 \
+   --label_len 12 \
+   --pred_len 6 \
+   --e_layers 2 \
+   --d_layers 1 \
+   --factor 3 \
+   --enc_in 1 \
+   --dec_in 7 \
+   --c_out 1 \
+   --d_model $d_model \
+   --d_ff $d_ff \
+   --batch_size $batch_size \
+   --learning_rate $learning_rate \
+   --llm_layers $llama_layers \
+   --train_epochs $train_epochs \
+   --model_comment $comment
 
 accelerate launch  --multi_gpu --mixed_precision bf16 --num_processes $num_process --main_process_port $master_port --config_file ./accelerate_config_4gpus.yaml run_glucose.py \
   --task_name short_term_forecast \
