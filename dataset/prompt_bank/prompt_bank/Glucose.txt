@@ -1,0 +1,1 @@
+This dataset comprises time series data of glucose level measurements collected at 5-minute intervals for certain patient of diabetes. The primary target variable is 'glucose'.  The data spans from April 9, 2027 to May 26, 2027.
